@@ -2,10 +2,21 @@ LIB"grobner.lib";
 
 ring R = 0, (x,y,z), dp;
 
-poly f = x^2y -3xy^2 +x^2 -3xy;
-poly g = x^3y + x^3 -4y^2 - 3y +1;
+//poly f = x^2*y -3*x*y^2 +x^2 -3*xy;
+//poly g = x^3*y + x^3 -4*y^2 - 3*y +1;
+//poly j = x*y+x;
+//poly h = y^2 + 2y + 1;
 
-proc: resultante(poly f, poly g);
+
+
+proc resux (poly f, poly g);
 {
-	return resultant(f,g);
+	poly h = resultant(f,g,x);
+	return(h);
+}
+
+proc resuy (poly f, poly g);
+{
+	poly j = resultant(f,g,y);
+	return(j);
 }
