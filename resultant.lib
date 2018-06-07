@@ -1,0 +1,11 @@
+LIB"grobner.lib";
+
+ring R = 0, (x,y,z), dp;
+
+poly f = x^2y -3xy^2 +x^2 -3xy;
+poly g = x^3y + x^3 -4y^2 - 3y +1;
+
+proc: resultante(poly f, poly g);
+{
+	return resultant(f,g);
+}
