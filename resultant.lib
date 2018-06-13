@@ -2,8 +2,8 @@ LIB"grobner.lib";
 
 ring R = 0, (x,y,z), dp;
 
-//poly f = x^2*y -3*x*y^2 +x^2 -3*xy;
-//poly g = x^3*y + x^3 -4*y^2 - 3*y +1;
+poly f = x^4 -3*x^3 +x^2 -3*x + 17;
+poly g = x^3 + x^2 -4*x - 3*x +1;
 //poly j = x*y+x;
 //poly h = y^2 + 2y + 1;
 
@@ -26,4 +26,12 @@ proc polisumaraices(poly f, poly g);
 	poly h = subst(g,x,y-x);
 	poly j = resultant(f,h,x);
 	return(j);
+}
+
+proc difrac (poly f, poly g)
+{
+	poly p = polisumaraices(f,g);
+	cleardenom(p);
+	int a0 = jet (p,0);
+	int an = leadcoef (p);	
 }
