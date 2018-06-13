@@ -20,3 +20,10 @@ proc resuy (poly f, poly g);
 	poly j = resultant(f,g,y);
 	return(j);
 }
+
+proc polisumaraices(poly f, poly g);
+{
+	poly h = subst(g,x,y-x);
+	poly j = resultant(f,h,x);
+	return(j);
+}
